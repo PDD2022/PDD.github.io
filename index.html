@@ -6,6 +6,36 @@
   <title>PDD</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./pdd2/themes/gray/style.css">
+<script>
+// Функция для сохранения данных в Local Storage
+function saveDataToLocalStorage(key, value) {
+  localStorage.setItem(key, JSON.stringify(value));
+}
+
+// Функция для получения данных из Local Storage
+function getDataFromLocalStorage(key) {
+  const data = localStorage.getItem(key);
+  return JSON.parse(data);
+}
+
+// Функция для удаления данных из Local Storage
+function removeDataFromLocalStorage(key) {
+  localStorage.removeItem(key);
+}
+
+// Пример использования функций
+const myData = { name: "John", age: 25 };
+
+// Сохранение данных в Local Storage
+saveDataToLocalStorage("myData", myData);
+
+// Получение данных из Local Storage
+const retrievedData = getDataFromLocalStorage("myData");
+console.log(retrievedData);
+
+// Удаление данных из Local Storage
+removeDataFromLocalStorage("myData");
+</script>
 <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
 <script>
   vkBridge.send('VKWebAppInit');</script>
